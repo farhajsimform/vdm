@@ -15,7 +15,7 @@ export default function Home() {
                     content="A tool for designing databases using pictures called entity-relationship diagrams."
                 />
                 <link rel="icon" href="/favicon.png" />
-                <style>{'body { overflow: auto !important; }'}</style>
+                
             </Head>
             <div className="index-container">
                 <PageHeader
@@ -24,7 +24,7 @@ export default function Home() {
                         position: 'sticky',
                         top: 0,
                         boxShadow: '1px 1px 1px rgba(0, 0, 0, 0.1)',
-                        zIndex: 2,
+                        zIndex: 99,
                     }}
                     title="VDM"
                     subTitle="A tool for designing databases using pictures called entity-relationship diagrams."
@@ -37,10 +37,10 @@ export default function Home() {
                     }
                 />
                 <div className="index-bg">
-                    <Typography.Title className="tc" type="secondary">
-                        <span className="mark">Simply easy</span>
-                        <p className="mark">Database designing & Data modeling tool</p>
-                    </Typography.Title>
+                <div className="hero-banner-content">
+                        <h1>Simple & Easy</h1>
+                        <p>Database designing & Data modeling tool</p>
+                    </div>
                     <Link href="/graphs">
                         <Button
                             type="primary"

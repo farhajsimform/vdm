@@ -1,5 +1,5 @@
 body
-    overflow: hidden
+    overflow-x: hidden
     background-color: var(--color-bg-2)
 
 a
@@ -401,15 +401,34 @@ body[arco-theme=dark] .arco-home-key
     color: var(--color-text-3)
 
 .index-bg
-    padding: 8rem 0 12rem 0
-    background-color: var(--color-primary-light-1)
-    background-image: url('/images/bg.jpg')
-    background-size: cover
-    background-position: center
+    width: 100vw
+    height: calc(100vh - 64px)
     display: flex
     flex-direction: column
-    align-items: center
     justify-content: center
+    align-items: flex-start
+    gap: 20px
+    background-color: var(--color-primary-light-1)
+    background-image: url('/images/bg.svg')
+    background-size: cover
+    background-position: center
+    padding-left: 10rem
+    .hero-banner-content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        h1
+            font-size: 6em
+            margin: 0
+            font-weight: 700
+            color: #c2b5db
+        p
+            font-size: 2em
+            margin: 0
+            font-weight: 400
+            color: #cec7d3
+    
 
 .mark
     background-color: var(--color-primary-light-1)
@@ -423,7 +442,7 @@ body[arco-theme=dark] .arco-home-key
         width: 100%
         top: 0
         left: 0
-        filter: blur(2px) brightness(.5)
+        filter: blur(2px) brightness(.3)
         position: relative
         z-index: 1
         object-fit: cover
@@ -448,10 +467,12 @@ body[arco-theme=dark] .arco-home-key
             font-size: 1.5rem
             font-weight: bolder
             margin-bottom: 1rem
+            color #c2b5db
 
         dd
-            font-size: 1.5rem
+            font-size: 1.1rem
             margin: 0 0 2rem 0
+            color: #d5cfdb
 
 .index-steps
     margin: -10px 0 0 0
@@ -468,9 +489,9 @@ body[arco-theme=dark] .arco-home-key
     margin: -10px 0 0 0
     overflow: hidden
     background: rgba(0, 0, 0, 0.1)
-    color: #666
+    color: var(--color-text-1)
     &>div
-        color: #000
+        color: var(--color-text-1)
         font-size: 1.5rem
     a span
         color: #666
