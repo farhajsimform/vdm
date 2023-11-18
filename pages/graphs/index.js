@@ -150,7 +150,7 @@ export default function Home() {
                     />
                 ) : (
                     <div className="graph-list-btns">
-                        <Empty style={{ marginBottom: 16 }} />
+                        <Empty style={{ marginBottom: 16 }} description='No data, please import!'/>
                         <Button size="large" type="primary" onClick={() => handlerAddGraph()}>
                             Create new graph now
                         </Button>
