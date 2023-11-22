@@ -9,7 +9,7 @@ import graphState from '../hooks/use-graph-state';
  * @param props - the props passed to the component
  * @returns List Nav component
  */
-export default function ListNav({ importGraph, addGraph, addExample }) {
+export default function ListNav({ importGraph, addGraph, addExample, disableExample = false }) {
     const { theme, setTheme } = graphState.useContainer();
 
     return (
@@ -26,7 +26,7 @@ export default function ListNav({ importGraph, addGraph, addExample }) {
                 <Button size="small" type="primary" shape="round" onClick={() => addGraph()}>
                     + New graph
                 </Button>
-                <Button size="small" shape="round" onClick={() => addExample()}>
+                <Button size="small" shape="round" onClick={() => addExample()} disabled={disableExample}>
                     Example graph
                 </Button>
                 <Switch

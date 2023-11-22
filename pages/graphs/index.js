@@ -20,7 +20,7 @@ import {
     IconCalendarClock,
     IconCopy,
 } from '@arco-design/web-react/icon';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { addGraph, delGraph, getAllGraphs } from '../../data/db';
 import ListNav from '../../components/list_nav';
 import northwindTraders from '../../data/example/northwind_traders.json';
@@ -78,6 +78,11 @@ export default function Home() {
         });
     };
 
+    const disableExample = useMemo(() => {
+        return [northwindTraders, blog, spaceX].some(el => graphs.some(val => val.id === el.id));
+    }, [graphs]);
+
+
     return (
         <>
             <Head>
@@ -92,6 +97,7 @@ export default function Home() {
                 addGraph={() => handlerAddGraph()}
                 importGraph={() => setShowModal('import')}
                 addExample={() => handlerAddExample()}
+                disableExample={disableExample}
             />
             <div className="graph-container">
                 {graphs && graphs.length ? (
@@ -150,7 +156,7 @@ export default function Home() {
                     />
                 ) : (
                     <div className="graph-list-btns">
-                        <Empty style={{ marginBottom: 16 }} description='No data, please import!'/>
+                        <Empty style={{ marginBottom: 16 }} description="No data, please import!" />
                         <Button size="large" type="primary" onClick={() => handlerAddGraph()}>
                             Create new graph now
                         </Button>
