@@ -55,6 +55,8 @@ export default function LinkModal(props) {
             footer={null}
             autoFocus={false}
             focusLock={false}
+            okText="Copy"
+            cancelText="Close"
         >
             <Space
                 style={{
@@ -86,6 +88,8 @@ export default function LinkModal(props) {
                     onOk={() => {
                         removeLink();
                     }}
+                    okText='Yes'
+                    cancelText='No'
                 >
                     <Button>Delete Path</Button>
                 </Popconfirm>
